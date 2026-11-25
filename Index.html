@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terima Kasih, Guru-Guru SMK Tercinta ❤️</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Confetti JS for Surprise Effect -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .floating-anim {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-indigo-50 to-pink-50 text-slate-800 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+
+    <!-- Header / Navbar Minimalis -->
+    <header class="w-full py-4 px-6 md:px-12 flex justify-between items-center glassmorphism sticky top-0 z-50 border-b border-indigo-100 shadow-sm">
+        <div class="flex items-center space-x-2">
+            <span class="text-2xl">🎓</span>
+            <span class="font-bold text-lg md:text-xl bg-gradient-to-r from-indigo-600 to-pink-600 bg-clip-text text-transparent">TerimaKasihGuru.smk</span>
+        </div>
+        <div class="text-xs md:text-sm font-medium text-indigo-700 bg-indigo-100 px-3 py-1.5 rounded-full">
+            Kami dari seluruh Murid SMK Wikrama 1 Kab. Semarang ✨
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16 flex flex-col items-center justify-center text-center">
+
+        <!-- Hero Section -->
+        <div class="max-w-3xl mx-auto space-y-6">
+            <div class="inline-block bg-pink-100 text-pink-600 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide uppercase floating-anim shadow-sm">
+                Pelita Ilmu & Pembentukan Karakter 🌟
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                Terima Kasih, <br>
+                <span class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">Bapak & Ibu Guru SMK</span>
+            </h1>
+
+            <p class="text-sm sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                Setiap pelajaran, bimbingan, dan kesabaran yang Engkau berikan adalah bekal berharga bagi kami untuk menatap masa depan dan menggapai cita-cita di dunia kerja maupun industri.
+            </p>
+
+            <!-- Surprise Button Section -->
+            <div class="pt-6">
+                <button id="surpriseBtn" onclick="triggerSurprise()" class="relative group overflow-hidden rounded-2xl bg-gradient-to-r from-indigo-600 to-pink-600 p-px font-semibold text-white shadow-xl transition-all duration-300 hover:scale-105 active:scale-95">
+                    <span class="flex items-center gap-2 rounded-2xl bg-gradient-to-r from-indigo-600 to-pink-600 px-8 py-4 text-base sm:text-lg font-bold transition-all duration-300 group-hover:bg-opacity-0">
+                        🎁 Buka Kejutan Spesial Untuk Guru
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Surprise Hidden Modal / Card Container (Muncul setelah tombol diklik) -->
+        <div id="surpriseCard" class="hidden mt-12 w-full max-w-2xl transform transition-all duration-500 opacity-0 translate-y-6">
+            <div class="bg-white/90 backdrop-blur-md rounded-3xl p-8 border border-indigo-100 shadow-2xl relative overflow-hidden text-left">
+                <div class="absolute -right-10 -top-10 w-40 h-40 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+                <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+                
+                <div class="relative z-10 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl">💌</span>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-indigo-500 bg-indigo-50 px-3 py-1 rounded-full">Pesan Spesial Hari Ini</span>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-800">Pahlawan Tanpa Tanda Jasa di Era Vokasi</h3>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        "Terima kasih telah membimbing kami tidak hanya lewat teori di dalam kelas, tetapi juga mengajarkan keterampilan nyata, etos kerja, kedisiplinan, dan arti tanggung jawab. Engkau adalah inspirasi terbesar kami dalam melangkah menjadi generasi yang kompeten dan berakhlak mulia."
+                    </p>
+                    <div class="pt-2 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400">
+                        <span>Dari Seluruh Murid SMK Tercinta</span>
+                        <span class="text-pink-500 font-medium">❤️ We Love You, Guru!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quotes / Kutipan Inspiratif Grid -->
+        <div class="mt-20 w-full max-w-5xl mx-auto">
+            <h2 class="text-2xl font-bold text-slate-900 mb-8">Refleksi & Makna Pengorbanan Guru</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                
+                <!-- Quote 1 -->
+                <div class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="text-indigo-600 text-2xl mb-3">💡</div>
+                    <h4 class="font-bold text-slate-800 mb-2">Ilmu yang Bermanfaat</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        "Guru yang baik tidak hanya memberitahu kebenaran, tetapi menginspirasi siswa untuk mencarinya dan menerapkannya di dunia industri."
+                    </p>
+                </div>
+
+                <!-- Quote 2 -->
+                <div class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="text-pink-600 text-2xl mb-3">🛠️</div>
+                    <h4 class="font-bold text-slate-800 mb-2">Keterampilan & Mental</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        "Di SMK, kami belajar merakit masa depan dengan tangan kami sendiri, berkat ketelatenan dan kesabaran Bapak dan Ibu guru di ruang praktik."
+                    </p>
+                </div>
+
+                <!-- Quote 3 -->
+                <div class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="text-purple-600 text-2xl mb-3">🌟</div>
+                    <h4 class="font-bold text-slate-800 mb-2">Keteladanan Abadi</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        "Seorang guru mempengaruhi keabadian; dia tidak pernah tahu di mana pengaruhnya berhenti. Terima kasih atas dedikasi tanpa batasmu."
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bagian Jurusan / Elemen Kolektif SMK -->
+        <div class="mt-16 w-full max-w-4xl mx-auto bg-gradient-to-r from-indigo-900 to-slate-900 rounded-3xl p-8 text-white shadow-xl text-center relative overflow-hidden">
+            <div class="relative z-10 space-y-4">
+                <h3 class="text-xl sm:text-2xl font-bold">Wujud Terima Kasih dari Berbagai Kompetensi Keahlian</h3>
+                <p class="text-indigo-200 text-sm sm:text-base max-w-xl mx-auto">
+                    Apapun jurusannya, dimanapun ruang praktiknya, rasa hormat kami tetap satu untuk seluruh guru hebat di sekolah.
+                </p>
+                <div class="flex flex-wrap justify-center gap-2 pt-4">
+                    <span class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-xs sm:text-sm font-medium border border-white/10">Rekayasa Perangkat Lunak</span>
+                    <span class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-xs sm:text-sm font-medium border border-white/10">Otomotif</span>
+                    <span class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-xs sm:text-sm font-medium border border-white/10">Tata Busana</span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-6 text-center text-xs sm:text-sm text-slate-500 border-t border-slate-200/60 mt-12">
+        <p>Dibuat dengan ❤️ untuk seluruh Bapak & Ibu Guru SMK Wikrama 1 Kab. Semarang.</p>
+        <p class="mt-1">Siap di-upload ke GitHub Pages 🚀</p>
+    </footer>
+
+    <!-- Script untuk Interaksi Kejutan & Animasi Confetti -->
+    <script>
+        function triggerSurprise() {
+            // Efek Confetti Kembang Api
+            var duration = 3 * 1000;
+            var animationEnd = Date.now() + duration;
+            var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
+
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            var interval = setInterval(function() {
+                var timeLeft = animationEnd - Date.now();
+
+                if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                }
+
+                var particleCount = 50 * (timeLeft / duration);
+                // Menembakkan confetti dari berbagai sudut
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+            }, 250);
+
+            // Tampilkan kartu pesan kejutan dengan transisi halus
+            const card = document.getElementById('surpriseCard');
+            const btn = document.getElementById('surpriseBtn');
+            
+            card.classList.remove('hidden');
+            setTimeout(() => {
+                card.classList.remove('opacity-0', 'translate-y-6');
+                card.classList.add('opacity-100', 'translate-y-0');
+            }, 50);
+
+            // Sembunyikan tombol setelah diklik agar fokus ke pesan
+            btn.style.opacity = '0.5';
+            btn.style.pointerEvents = 'none';
+            btn.innerText = "✨ Kejutan Telah Dibuka! ✨";
+        }
+    </script>
+</body>
+</html>
